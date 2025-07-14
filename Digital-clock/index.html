@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "Time"> </h1>
+    <script> 
+    const Last = document.getElementById("Time")
+        setInterval(clockUpdate, 1000)
+        function clockUpdate(){
+            const current = new Date();
+            const hour = current.getHours();
+            const minute = current.getMinutes();
+            const second = current.getSeconds();
+            Last.innerHTML = `${hour} : ${minute} : ${second} `;
+        }
+
+    </script>
+    
+</body>
+</html>
