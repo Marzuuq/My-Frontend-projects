@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <link rel="icon" href="./Assets/favicon-32x32.png" type="image/x-icon" alt="Image">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="bodu">
+
+
+    <h1> Dice Roller </h1>
+    <div id="button-container">
+    <button onclick="rollNumber()" id="button" aria-label="Roll the Dice"> 🎲 Roll The dice</button>
+    </div>
+    <h2 id = "result"></h2>
+
+
+
+    <script>
+        function rollNumber(){
+            document.getElementById("result").innerText = "⌛Rolling....";
+
+         setTimeout(() => {
+        let randomNumber = Math.floor(Math.random() * 6) + 1;
+        let diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+        
+        document.getElementById("result").innerText = `You Rolled: ${randomNumber} ${diceFaces[randomNumber-1]}`;
+    } , 1000);
+
+        }
+    </script>
+</body>
+</html>

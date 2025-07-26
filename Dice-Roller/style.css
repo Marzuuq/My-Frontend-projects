@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+#bodu{
+    background-color: black;
+}
+
+#result{
+    text-align: center;
+    color: white;
+}
+#button-container{
+    color: black;
+    text-align: center;      
+    font-size: 18px;   
+          
+  
+}
