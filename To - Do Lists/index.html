@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    .task {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 300px;
+    }
+
+    #taskList, #completedList {
+      margin-top: 20px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>To-Do List 📝</h2>
+    <input type="text" id="userInp" placeholder="Enter your task here!">
+    <button id="btn">Add Task ➕</button>
+
+    <div id="taskList"></div>
+
+    <h3>Completed Tasks ✅</h3>
+    <div id="completedList"></div>
+  </div>
+
+  <script>
+    const btn = document.getElementById("btn");
+
+    btn.addEventListener("click", function () {
+      const taskInput = document.getElementById("userInp");
+      const taskText = taskInput.value.trim();
+
+      if (taskText !== "") {
+        const taskDiv = document.createElement("div");
+        taskDiv.className = "task";
+        taskDiv.innerHTML = `
+          <span>${taskText}</span>
+          <div class="actions">
+            <button class="doneBtn">Done</button>
+            <button class="deleteBtn">Delete</button>
+          </div>
+        `;
+
+        document.getElementById("taskList").appendChild(taskDiv);
+
+        // Done Button
+        taskDiv.querySelector(".doneBtn").addEventListener("click", () => {
+          document.getElementById("completedList").appendChild(taskDiv);
+          taskDiv.querySelector(".doneBtn").remove(); // Remove done button after completion
+        });
+
+        // Delete Button
+        taskDiv.querySelector(".deleteBtn").addEventListener("click", () => {
+          taskDiv.remove();
+        });
+
+        taskInput.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
