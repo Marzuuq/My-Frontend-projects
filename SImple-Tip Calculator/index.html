@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-Calculator</title>
+</head>
+<body>
+    <input type="number" id = "inputType" placeholder="Enter the Tip and Bill">
+    <button id = "btn">Submit</button>
+
+    <p id = "result"></p>
+
+    <script>
+        document.getElementById("btn").addEventListener("click" , function(){
+            const inputValue = document.getElementById("inputType").value;
+            
+            document.getElementById("result").innerHTML = `Your Bill , ${main}`;
+        })
+    </script>
+</body>
+</html>
