@@ -28,5 +28,5 @@ function calculateAge() {
     if (Month < 0 ){
         Month= Month + 11;
     }
-    document.getElementById("result").innerText = `You are ${age} years  and ${Month} Old.`;
+    document.getElementById("result").innerText = `You are ${age} years  and ${Month}  Months Old.`;
 }
